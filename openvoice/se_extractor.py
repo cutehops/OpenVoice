@@ -13,8 +13,8 @@ import base64
 import librosa
 from whisper_timestamped.transcribe import get_audio_tensor, get_vad_segments
 
-device = "cuda" if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else "cpu")
-compute_type = "float16" if torch.cuda.is_available() else ("float16" if torch.backends.mps.is_available() else "float16")
+device = "cuda" if torch.cuda.is_available() else "cpu"
+compute_type = "float16" if torch.cuda.is_available() else "float32"
 
 model_size = "medium"
 # Run on GPU with FP16
